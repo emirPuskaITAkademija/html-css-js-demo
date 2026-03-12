@@ -1,0 +1,26 @@
+Kreirajte strukturu projekta(direktorijuma) - mini web projekat
+
+festival-journal
+│
+├── index.html
+│
+├── pages
+│   └── day1.html
+│
+├── images
+│   ├── nature.jpg
+│   └── animal.jpg
+
+
+Kreirajte sadžraj index.html:
+
+-> Dodajte naslov stranice
+-> Dodajte sliku uz images foldera
+-> Dodajte link na stranicu day1.html
+
+
+Sadržaj day.html:
+
+-> Dodajte naslov
+-> Dodajte sliku iz images direktorijuma/foldera
+-> Dodajte link nazad na index.html
