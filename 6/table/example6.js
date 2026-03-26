@@ -21,17 +21,33 @@ function prikaziIgrace() {
     tableHtmlElement.innerHTML = `
         <thead>
           <tr>
-            <th>Igrač</th>
-            <th>Bodovi</th>
+            <th>
+              <div class="header-contents">
+                <span>Igrač</span>
+                <span class="sort-controls">
+                    <span class="sort-arrow" onclick="sortirajPoImenuAsc()">▲</span>
+                    <span class="sort-arrow" onclick="sortirajPoImenuDesc()">▼</span>
+                </span>
+               </div>
+      
+            </th>
+            <th>
+              <div class="header-contents">
+                <span>Bodovi</span>
+                <span class="sort-controls">
+                    <span class="sort-arrow" onclick="sortirajPoBodovimaAsc()">▲</span>
+                    <span class="sort-arrow" onclick="sortirajPoBodovimaDesc()">▼</span>
+                </span>
+               </div>
+            </th>
           </tr>
         </thead>    
         <tbody id="tijelo">
-        
         </tbody>    
     `;
     const tBody = document.getElementById("tijelo");
     igraci.forEach(igrac => {
-        tBody.innerHTML = tBody.innerHTML + `
+            tBody.innerHTML = tBody.innerHTML + `
                   <tr>
                     <td>${igrac.ime}</td>
                     <td>${igrac.bodovi}</td>
@@ -41,42 +57,24 @@ function prikaziIgrace() {
     );
 }
 
-function sortirajIgrace() {
-    //Comparable -> compareTo
-    // prvi veći od drugog >0 : prvi ide prije drugog
-    //prvi manji od drugog <0 : drugi ide prije prvog
-    // prvi jednak drugom =0 : ostaju gdje jesu
-
-    // igraci.sort((prvi, drugi)=>{
-    //     if(prvi.bodovi>drugi.bodovi){
-    //         return -1;
-    //     }
-    //     if(prvi.bodovi<drugi.bodovi){
-    //         return 1;
-    //     }
-    //     return 0;
-    // });
-
-    // igraci.sort((p, d) => p.bodovi - d.bodovi);
-
-    igraci.sort(sort)
-
-    //igraci -> JavaScript NIZ Array
-    // ugrađena funkcija sort
-    // da bi ta funkcija radila morate definirati po čemu će se raditi sortiranje
-    // => ARROW function je kreirala objekat ili
-    //definirala blok koda na osnovu kojeg će se raditi sortiranje
+function sortirajPoBodovimaAsc() {
+    igraci.sort((igrac1, igrac2) => igrac2.bodovi - igrac1.bodovi);
     prikaziIgrace();
 }
 
-function sort(igrac1, igrac2){
-    if(igrac1.bodovi>igrac2.bodovi){
-        return -1;
-    }
-    if(igrac1.bodovi<igrac2.bodovi){
-        return 1;
-    }
-    return 0;
+function sortirajPoBodovimaDesc() {
+    igraci.sort((igrac1, igrac2) => igrac1.bodovi - igrac2.bodovi);
+    prikaziIgrace();
+}
+
+function sortirajPoImenuAsc() {
+    igraci.sort((igrac1, igrac2) => igrac2.ime.localeCompare(igrac1.ime));
+    prikaziIgrace();
+}
+
+function sortirajPoImenuDesc() {
+    igraci.sort((igrac1, igrac2) => igrac1.ime.localeCompare(igrac2.ime));
+    prikaziIgrace();
 }
 
 prikaziIgrace();
