@@ -7,3 +7,42 @@ Primjer "Leaderboard(sortiranje po bodovima)"
 - rad sa HTML zabelom
 - rad sa JS array objektima
 - sortiranje
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MVP Minimum Viable Product
+
+- Fokusirate samo na 2 glavna modula:
+ 1. Obaveze(tasks/events)
+ 2. Finansije(prihodi/rashodi)
+
+ Ne pokušavajte odmah na više jezika, kompleksne role, napredne analitike..
+
+ Modul: Obaveze
+    - kreriranje zadatka(naziv, datum, opis)
+    - kalendarski pregled zadataka
+    - status(planned/done)
+
+ Modul: Finansije
+   - dodam prihod/trošak
+   - kategorije(škola, računi, hrana..)
+   - jednostavan pregled(lista ili sumarni)
+
+  Modul: Porodica(kasnije..)
+   - više članova
+   - dodjela zadatata...
